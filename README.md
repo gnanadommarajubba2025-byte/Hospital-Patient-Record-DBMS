@@ -36,7 +36,7 @@ Patient gets Billing.
 
 2. Find doctor of a department by department name
 
-3. Get all medical records for a given patient
+3. Get all medical records for a given patient.
 
 4. Show billing details for a specific patient
 
