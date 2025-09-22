@@ -1,6 +1,6 @@
 **Hospital Database Project - README**
 
-Overview
+**Overview**
 This project designs and implements a relational database for a hospital management system. It models strong entities such as Patients, Doctors, Departments, Appointments and weak entities such as Medical Records, and Billing.
 
 **Database Design:**
