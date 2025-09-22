@@ -25,11 +25,11 @@ Attributes: Bill_ID (PrimaryKey), Patient_ID (ForeignKey), Bill_Date, Amount.
 The design uses primary keys for unique identification and foreign keys to maintain references between related tables.
 
 **Relationships:**
-Patient has Appointment
-Doctor treats Appointment
-Doctor belongs to Department
-Patient has Medical_Record
-Patient gets Billing
+Patient has Appointment,
+Doctor treats Appointment,
+Doctor belongs to Department,
+Patient has Medical_Record,
+Patient gets Billing.
 
 **Sample Queries:**
 1. List all appointments of a specific patient
@@ -43,5 +43,4 @@ Patient gets Billing
 5. Find Patient details using Patient ID
 
 **Technology used for Assignment:**
-
 MySQL Command Line Client
