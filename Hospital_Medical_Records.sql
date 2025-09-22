@@ -1,3 +1,4 @@
+-- Table Creation
 CREATE TABLE Patient (
   Patient_ID INT PRIMARY KEY,
   Name VARCHAR(100),
@@ -46,6 +47,7 @@ CREATE TABLE Billing (
   FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
 );
 
+-- Insert Statements for Patient
 INSERT INTO Patient VALUES (10001, 'Aarav Sharma', '1990-05-12', '9876543210');
 INSERT INTO Patient VALUES (10002, 'Priya Patel', '1985-03-23', '9876543211');
 INSERT INTO Patient VALUES (10003, 'Rahul Gupta', '1978-11-05', '9876543212');
@@ -67,6 +69,7 @@ INSERT INTO Patient VALUES (10018, 'Suresh Iyer', '1977-10-07', '9876543227');
 INSERT INTO Patient VALUES (10019, 'Divya Nair', '1989-06-21', '9876543228');
 INSERT INTO Patient VALUES (10020, 'Ravi Joshi', '1996-04-15', '9876543229');
 
+-- Insert Statements for Department
 INSERT INTO Department VALUES (1, 'Cardiology', '01123456789');
 INSERT INTO Department VALUES (2, 'Oncology', '02234567890');
 INSERT INTO Department VALUES (3, 'Neurology', '03345678901');
@@ -88,6 +91,7 @@ INSERT INTO Department VALUES (18, 'Anesthesiology', '09990123456');
 INSERT INTO Department VALUES (19, 'Plastic Surgery', '01101234567');
 INSERT INTO Department VALUES (20, 'Pediatrics ICU', '02212345678');
 
+-- Insert Statements for Doctor
 INSERT INTO Doctor VALUES (1, 1, 'Dr. Amit Sharma', 'Cardiology', '9876500001');
 INSERT INTO Doctor VALUES (2, 2, 'Dr. Neha Patel', 'Oncology', '9876500002');
 INSERT INTO Doctor VALUES (3, 3, 'Dr. Rahul Desai', 'Neurology', '9876500003');
@@ -109,6 +113,7 @@ INSERT INTO Doctor VALUES (18, 18, 'Dr. Suresh Iyer', 'Anesthesiology', '9876500
 INSERT INTO Doctor VALUES (19, 19, 'Dr. Divya Nair', 'Plastic Surgery', '9876500019');
 INSERT INTO Doctor VALUES (20, 20, 'Dr. Ravi Joshi', 'Pediatrics ICU', '9876500020');
 
+-- Insert Statements for Appointment
 INSERT INTO Appointment VALUES (10001, 10007, 1, '2024-08-14');
 INSERT INTO Appointment VALUES (10002, 10004, 5, '2022-01-15');
 INSERT INTO Appointment VALUES (10003, 10013, 16, '2024-12-04');
@@ -130,6 +135,7 @@ INSERT INTO Appointment VALUES (10018, 10006, 3, '2021-11-02');
 INSERT INTO Appointment VALUES (10019, 10009, 20, '2023-05-13');
 INSERT INTO Appointment VALUES (10020, 10006, 15, '2022-04-24');
 
+-- Insert Statements for Medical_Record
 INSERT INTO Medical_Record VALUES (10001, 10007, 1, 'Diabetes Mellitus');
 INSERT INTO Medical_Record VALUES (10002, 10004, 6, 'Hypertension');
 INSERT INTO Medical_Record VALUES (10003, 10020, 16, 'Asthma');
@@ -151,6 +157,7 @@ INSERT INTO Medical_Record VALUES (10018, 10004, 14, 'Skin Infection');
 INSERT INTO Medical_Record VALUES (10019, 10004, 17, 'Liver Cirrhosis');
 INSERT INTO Medical_Record VALUES (10020, 10013, 4, 'Chronic Pain');
 
+-- Insert Statements for Billing
 INSERT INTO Billing VALUES (10001, 10015, '2024-09-30', 1691.60);
 INSERT INTO Billing VALUES (10002, 10016, '2022-08-18', 4591.42);
 INSERT INTO Billing VALUES (10003, 10020, '2023-11-17', 3410.51);
@@ -172,30 +179,24 @@ INSERT INTO Billing VALUES (10018, 10007, '2023-08-11', 1329.74);
 INSERT INTO Billing VALUES (10019, 10020, '2020-06-04', 4786.67);
 INSERT INTO Billing VALUES (10020, 10002, '2023-04-04', 4108.75);
 
+-- Sample Queries
+-- 1. List all appointments of a specific patient
 Select*from Appointment
     -> where patient_id = 10001;
 
+-- 2. Find doctor of a department by department name
 select name, doctor_id from doctor
     -> where department = "emergency";
 
+-- 3. Get all medical records for a given patient
 SELECT Record_ID, Diagnosis, Doctor_ID
     -> FROM Medical_Record
     -> where Patient_ID = 10005;
 
+-- 4. Show billing details for a specific patient
 SELECT * FROM BILLING
     -> WHERE Patient_Id = 10011
-  
+
+-- 5. Find Patient details using Patient ID
 select * FROM PATIENT
     -> Where patient_id = 10020;
-
-
-
-
-
-
-
-
-
-
-
-
